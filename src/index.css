@@ -1,0 +1,143 @@
+ :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(179, 147, 147, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+
+/*
+body {
+  display: flex;
+  place-items: center;
+  background-color: #1b1c1c;
+  color: white;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.todo-wrapper {
+  display: block; 
+  width: 600px;
+  height: 1000px;
+  background: black;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  box-shadow: 0 3px 7px rgb(34, 45, 66);
+}
+
+.primaryBtn {
+  border-radius: 3px;
+  border: 2px solid transparent;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  width: 60px;
+  margin-bottom: 5rem;
+  margin-top: fit-content;
+  font-size: 1em;
+  color: white;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #317845;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.primaryBtn:hover {
+  background-color: #158423;
+}
+
+.secondaryBtn:hover {
+  background-color: #158515;
+}
+
+
+.btn-area {
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.secondaryBtn {
+  border-radius: 2px;
+  border: 2px solid transparent;
+  padding: 10px;
+  margin-left: 2px;
+  width: fit-content;
+  margin-bottom: 10rem;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #3c4140;
+  cursor: pointer;
+  color: white;
+  transition: border-color 0.25s;
+}
+
+.active {
+  background-color: #0c4d0c;
+}
+
+/* button:focus,
+button:focus-visible {
+  outline: 1px auto -webkit-focus-ring-color;
+} */
+
+/* 
+.todo-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+
+.todo-input-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 25px;
+  /* padding-bottom: 10px; */
+/* } */
+
+/* .todo-input-item label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.todo-input-item input {
+  padding: 8px;
+  border: none;
+  width: 180px;
+}
+
+.todo-input-item input:focus {
+  outline: none;
+  border: 2px solid green;
+}
+
+
