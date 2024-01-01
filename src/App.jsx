@@ -4,12 +4,13 @@ import {AiOutlineDelete} from 'react-icons/ai';
 import {BsCheckLg} from 'react-icons/bs';
 
 function App () {
-    const [isCompleteScreen, setIsCompleteScreen] = useState(false);
     const [allTodos, setTodos] = useState([]);
-    const [newDescription, setNewDescription] = useState("");
     const [newTitle, setNewTitle] = useState("");
+    const [newDescription, setNewDescription] = useState("");
     const [error, setError] = useState(false);
     const [completedTodos, setCompletedTodos] = useState([]);
+    const [isCompleteScreen, setIsCompleteScreen] = useState(false);
+
     // const [startTodos, setStartTodos] = useState([]);
 
 
@@ -76,11 +77,11 @@ function App () {
 
     const handleCompleteTodo = (index) => {
         let date = new  Date();
-        let day = date.getDate();
-        let month = date.getMonth() + 1;
-        let year = date.getFullYear();
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
+        let day = String(date.getDate());
+        let month = String(date.getMonth() + 1);
+        let year = String(date.getFullYear());
+        let hours = String(date.getHours());
+        let minutes = String(date.getMinutes());
         let am_pm = hours >= 12 ? 'PM' : 'AM';
 
         hours = hours % 12;
@@ -88,12 +89,14 @@ function App () {
         // hours = (hours ? hours : 0).toString().padStart(2, '0');          //same function
         hours = hours < 10 ? '0' + hours : hours;                            //same function
         minutes =  minutes < 10 ? '0' + minutes : minutes;
+        day = day < 10 ? '0' + day : day;            //truthy code still correct
+        month = month < 10 ? '0' + month : month;    //     ,,            ,,
         let strTime = hours + ':' + minutes + ' ' + am_pm;
         
-        if(month.length < 2)
-            month = "0" + month;
-        if(day.length < 2)
-            day = "0" + day;
+        // if(month.length < 2)
+        //     month = "0" + month;
+        // if(day.length < 2)
+        //     day = "0" + day;
 
         let completedOn = day + '-' + month + '-' + year + ' at ' + strTime ;
 
@@ -107,7 +110,6 @@ function App () {
         setCompletedTodos(updatedCompletedArr);
         handleDeleteTodo(index);  //removes from todo after clicking check button
         localStorage.setItem('completedTodos',JSON.stringify(updatedCompletedArr));
-
     }
 
     const handleDeleteCompletedTodo = (index) => {
@@ -132,7 +134,7 @@ function App () {
     return(
 
         <div className='App'> 
-        <h2>To-do List</h2> 
+        <h1>To-do List</h1> 
 
         <div className='todo-wrapper'>
             <div className='todo-input'>  
@@ -168,18 +170,17 @@ function App () {
             <div className='btn-area'>
                 <button 
                     className={`secondaryBtn ${isCompleteScreen===false && 'active'}`} 
-                    onClick={() => setIsCompleteScreen(true)}>Todo
+                    onClick={() => setIsCompleteScreen(false)}>Todo
                 </button>
 
                 <button 
                     className={`secondaryBtn ${isCompleteScreen===true && 'active'}`} 
-                    onClick={() => setIsCompleteScreen(false)}>Completed
+                    onClick={() => setIsCompleteScreen(true)}>Completed
                 </button>
             </div>
 
             <div className='todo-list'>
-                {isCompleteScreen == false && allTodos.map((item, index)=>{
-                    return(
+                {isCompleteScreen == false && allTodos.map((item, index) => (
                         <div className='todo-list-item' key={index}>
                             <div>
                                 <h3>{item.title}</h3>
@@ -200,16 +201,14 @@ function App () {
                             </div>
                             
                         </div>    
-                    )
-                })}    
+                ))}    
 
-                {isCompleteScreen == true && completedTodos.map((item, index)=>{
-                    return(
+                {isCompleteScreen == true && completedTodos.map((item, index) => (
                         <div className='todo-list-item' key={index}>
                             <div>
                                 <h3>{item.title}</h3>
                                 <p>{item.description}</p>
-                                <p1><small>Completed on<br></br> {item.completedOn} </small></p1>
+                                <p1><small><br></br> {item.completedOn} </small></p1>
                             </div>
             
                             <div>
@@ -220,11 +219,9 @@ function App () {
                                 />
                             </div>
                         </div>    
-                    )
-                })}    
+                ))}    
 
                 {/* {isCompleteScreen == false && startTodos.map((item, index)=>{
-                    return(
                         <div className='todo-list-item' key={index}>
                             <div>
                                 <h3>{item.title}</h3>
@@ -240,7 +237,6 @@ function App () {
                                 />
                             </div>
                         </div>    
-                    )
                 })}     */}
             </div> 
         </div>  

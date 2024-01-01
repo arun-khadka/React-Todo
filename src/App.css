@@ -4,7 +4,7 @@ body{
   overflow: hidden;
 }
 
-h2{
+h1{
   text-align: center;
 }
 
@@ -84,6 +84,7 @@ h2{
 
 .btn-area .active{
   background-color: rgb(4, 192, 104);
+  transition: background-color 0.4s ease;
 }
 
 
@@ -108,12 +109,12 @@ h2{
   font-size: 25px;
   color: rgb(0, 230, 122);
   font-weight: bold;
-  margin: 1px;
+  margin: 0px;
 }
 
 .todo-list-item p{
   margin-top:8px;
-  margin-right: 20px;
+  margin-right: 0px;
   font-size: 14px;
   color: rgb(251, 249, 249);
 }
@@ -124,6 +125,7 @@ h2{
   font-style: italic;
   margin-left: auto;
   margin-right: 10px;
+  color: #55dd67;
 }
 
 .icon{
