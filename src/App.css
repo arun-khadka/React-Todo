@@ -9,7 +9,7 @@ h2{
 }
 
 .todo-wrapper{
-  background-color: #353434;
+  background-color: #0d0d0d;
   padding: 2%;
   width: fit-content;
   margin-left: auto;
@@ -27,7 +27,6 @@ h2{
   border-bottom: 1px solid rgb(77, 77, 77);
   padding-bottom: 25px;
   margin-bottom: 25px;
-  
 }
 
 .todo-input-item{
@@ -67,11 +66,6 @@ h2{
 .primaryBtn:hover {
   background-color: #158423;
 }
-
-.secondaryBtn:hover {
-  background-color: #158515;
-}
-
 
 .btn-area{
   margin-bottom: 11px;
@@ -114,7 +108,7 @@ h2{
   font-size: 25px;
   color: rgb(0, 230, 122);
   font-weight: bold;
-  margin: 10px;
+  margin: 1px;
 }
 
 .todo-list-item p{
@@ -122,6 +116,14 @@ h2{
   margin-right: 20px;
   font-size: 14px;
   color: rgb(251, 249, 249);
+}
+
+.todo-list-item p1{
+  display: flex;
+  font:500;
+  font-style: italic;
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 .icon{
@@ -144,3 +146,4 @@ h2{
 .check-icon:hover{
   color: rgb(4, 192, 104);
 }
+
