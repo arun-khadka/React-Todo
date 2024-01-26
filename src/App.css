@@ -135,10 +135,6 @@ h1{
   cursor: pointer;
 }
 
-.icon:hover{
-  color: red;
-}
-
 .check-icon{
   font-size: 20px;
   cursor: pointer;
